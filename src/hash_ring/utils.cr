@@ -1,4 +1,4 @@
-require "Digest"
+require "digest"
 require "./item"
 
 module HashRing::Utils
