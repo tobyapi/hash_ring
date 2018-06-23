@@ -1,8 +1,5 @@
 # hash_ring
-
-**WIP**
-
-The Consistent Hash Ring is a useful data structure when you operate the distributed servers. This library is implementation of Consistent Hash Ring with Crystal language.
+The Consistent Hash Ring is a useful data structure when you operate the distributed servers. This library is implementation of Consistent Hash Ring based on the excellent [Elixir hash ring lib](https://github.com/discordapp/ex_hash_ring).
 
 ## Installation
 
@@ -20,27 +17,23 @@ dependencies:
 require "hash_ring"
 
 # Register 3 servers
-ch = HashRing::ConsistentHash(String).new(["one", "two", "three"])
+hash_ring = HashRing::HashRing.new(["one", "two", "three"])
 
 # Every user is assigned a server by consistent hash ring.
-ch.get("user1") # => "two"
-ch.get("user2") # => "two"
-ch.get("user3") # => "one"
-ch.get("user4") # => "three"
+hash_ring.get("user1") # => "three"
+hash_ring.get("user2") # => "three"
+hash_ring.get("user3") # => "one"
+hash_ring.get("user4") # => "two"
 
 # Removes the "two" server
-ch.remove("two")
+hash_ring.remove("two")
 
 # Exists two servers which are "one" and "three".
-ch.get("user1") # => "three"
-ch.get("user2") # => "one"
-ch.get("user3") # => "one"
-ch.get("user4") # => "three"
+hash_ring.get("user1") # => "three"
+hash_ring.get("user2") # => "three"
+hash_ring.get("user3") # => "one"
+hash_ring.get("user4") # => "three"
 ```
-
-## Development
-
-TODO: Implements SortedList or SortedHash with O(log n).
 
 ## Contributing
 

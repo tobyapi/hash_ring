@@ -1,13 +1,9 @@
 name: hash_ring
-version: 0.1.0
+version: 0.2.0
 
 authors:
   - TobiasGSmollett <landofscala@gmail.com>
 
-crystal: 0.23.1
+crystal: 0.25.0
 
 license: MIT
-
-dependencies:
-  murmur3:
-    github: kuende/murmur3
