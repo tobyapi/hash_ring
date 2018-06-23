@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/TobiasGSmollett/hash_ring.svg?branch=master)](https://travis-ci.org/TobiasGSmollett/hash_ring)
+
 # hash_ring
 The Consistent Hash Ring is a useful data structure when you operate the distributed servers. This library is implementation of Consistent Hash Ring based on the excellent [Elixir hash ring lib](https://github.com/discordapp/ex_hash_ring).
 
